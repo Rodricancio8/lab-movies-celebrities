@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create New Celebrity</title>
+</head>
+<body>
+  <h2>Add a New Celebrity</h2>
+  
+  {{#if error}}
+    <p style="color: red;">{{error}}</p>
+  {{/if}}
+  
+  <form action="/celebrities" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" required>
+    <br>
+    
+    <label for="occupation">Occupation:</label>
+    <input type="text" name="occupation" required>
+    <br>
+    
+    <label for="catchPhrase">Catchphrase:</label>
+    <input type="text" name="catchPhrase" required>
+    <br>
+    
+    <button type="submit">Add Celebrity</button>
+  </form>
+  
+  <br>
+  <a href="/celebrities">Back to Celebrities List</a>
+</body>
+</html>
