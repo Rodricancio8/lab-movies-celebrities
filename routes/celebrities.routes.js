@@ -23,9 +23,14 @@ router.get('/celebrities/create', (req, res) => {
   })
 
   router.get('/celebrities', (req, res) => {
-    res.render('celebrities/celebrities');
+    Celebrities.find()
+      .then((celebrities) => {
+        res.render('celebrities/celebrities', { celebrities });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   });
-  
 
 
 
